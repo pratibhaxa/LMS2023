@@ -4,7 +4,7 @@ import SignUpPage from './SignUpPage';
 function App() {
   return(
     <Routes>
-      <Route  path="/sign-up-page" element={<SignUpPage />}></Route>
+      <Route  path="/" element={<SignUpPage />}></Route>
     </Routes>
   )
 }
