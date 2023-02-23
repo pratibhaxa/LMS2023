@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/LMS2023/static/js/main.8a856434.js",
+    "static/media/bookimagedemo.png": "/LMS2023/static/media/bookimagedemo.cfe6e4a0621ec5fb4381.png",
+    "static/media/signupimage.png": "/LMS2023/static/media/signupimage.9b63e43d30f6f815879b.png",
+    "index.html": "/LMS2023/index.html",
+    "main.8a856434.js.map": "/LMS2023/static/js/main.8a856434.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.8a856434.js"
+  ]
+}
