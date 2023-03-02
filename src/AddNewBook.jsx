@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import Axios from "axios";
 import styled from "styled-components";
 import { Link } from "react-router-dom";

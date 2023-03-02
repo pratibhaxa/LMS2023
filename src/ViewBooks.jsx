@@ -1,6 +1,6 @@
 // import { Container } from "@mui/material";
 import Axios from "axios";
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import SearchIcon from '@mui/icons-material/SearchOutlined';
