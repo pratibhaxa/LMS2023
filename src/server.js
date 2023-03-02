@@ -90,25 +90,25 @@ app.post('/login', (request, response) => {
     );
 });
 
-app.post('/add-new-book-draft', (request, response) => {
+app.post('/add-new-book', (request, response) => {
     const id = request.body.idUI;
     const title = request.body.titleUI;
     const author = request.body.authorUI;
     const description = request.body.descriptionUI;
     const dopublish = request.body.dopublishUI;
     const price = request.body.priceUI;
-    var isbestseller = request.body.isbestsellerUI;
+    // var isbestseller = request.body.isbestsellerUI;
 
-    if(isbestseller.checked === true) {
-        isbestseller = 'true';
-    }
-    else {
-        isbestseller = 'false';
-    }
+    // if(isbestseller.checked === true) {
+    //     isbestseller = 'true';
+    // }
+    // else {
+    //     isbestseller = 'false';
+    // }
 
     db.query(
-        'INSERT INTO Books (id, title, author, description, dopublish, price, isbestseller) VALUES (?, ?, ?, ?, ?, ?, ?)',
-        [id, title, author, description, dopublish, price, isbestseller],
+        'INSERT INTO Books (id, title, author, description, dopublish, price) VALUES (?, ?, ?, ?, ?, ?)',
+        [id, title, author, description, dopublish, price],
         (error, result) => {
             console.log(error);
         }

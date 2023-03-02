@@ -90,9 +90,9 @@ function HomePage() {
                     <Left>
                         <LeftText>~ Pratibha Pradhan ~</LeftText></Left>
                     <Right>
-                        <Text><Link to='/home-page' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>HOME</Link></Text>
-                        <Text><Link to='/about-page' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>ABOUT</Link></Text>
-                        <Text><Link to='/sign-up-page' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>SIGN UP</Link></Text>
+                        <Text><Link to='/' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>HOME</Link></Text>
+                        <Text><Link to='/about' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>ABOUT</Link></Text>
+                        <Text><Link to='/sign-up' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>SIGN UP</Link></Text>
                         <Text style={{marginRight: "200px"}}><Link to='/sign-in-page' style={{textDecoration: "none", textDecorationColor: "black", color: "white"}}>SIGN IN</Link></Text>
                     </Right>
                 </Top>
@@ -104,5 +104,6 @@ function HomePage() {
         </Container>
     )
 }
+
 
 export default HomePage;

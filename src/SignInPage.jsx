@@ -1,13 +1,11 @@
 import Axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import signupimage from './signupimage.png';
 
 const Container = styled.div`
     background-color: #fff7f2;
-    /* background-color: aqua; */
-    /* height: 100%; */
     position: fixed;
     top: 0;
     bottom: 0;
@@ -128,27 +126,28 @@ const Button = styled.button`
     
 `;
 
-function SignUpPage() {
+function SignInPage () {
 
-    const [fullnameR, setFullnameR] = useState('');
-    const [usernameR, setUsernameR] = useState('');
-    const [passwordR, setPasswordR] = useState('');
-    const [confirmpasswordR, setConfirmpasswordR] = useState('');
-    const [emailR, setEmailR] = useState('');
+    const [usernameL, setUsernameL] = useState('');
+    const [passwordL, setPasswordL] = useState('');
+    const [loginStatus, setLoginStatus] = useState('');
 
-    const signup = () => {
-        Axios.post('http://localhost:3001/signup', {
-            fullname: fullnameR,
-            username: usernameR,
-            password: passwordR,
-            confirmpassword: confirmpasswordR,
-            email: emailR,
+    const login = () => {
+        Axios.post('http://localhost:3001/signin', {
+            username: usernameL,
+            password: passwordL,
         }).then((response) => {
-            console.log(response.data);
+            if(response.data.message) {
+                setLoginStatus(response.data.message);
+            }
+            else {
+                // setLoginStatus('logged in successfully');
+                window.open("http://localhost:3000/after-login-page",'_self');
+            }
         });
     };
 
-    return(
+    return (
         <Container>
             <Header>
                 <Top>
@@ -168,33 +167,33 @@ function SignUpPage() {
                 </ImageContainer>
                 <Form>
                     <Wrapper>
-                        <Label>Full Name : </Label>
+                        {/* <Label>Full Name : </Label>
                         <br/>
                         <Input 
                             type="text" 
                             placeholder="Full Name"
-                            onChange={(e) => {
-                                setFullnameR(e.target.value);
-                            }}
+                            // onChange={(e) => {
+                            //     setFullnameR(e.target.value);
+                            // }}
                         />
-                        <br/>
-                        <Label>Email ID : </Label>
+                        <br/> */}
+                        {/* <Label>Email ID : </Label>
                         <br/>
                         <Input
                             type="text" 
                             placeholder="Email ID"
-                            onChange={(e) => {
-                                setEmailR(e.target.value);
-                            }}
+                            // onChange={(e) => {
+                            //     setEmailR(e.target.value);
+                            // }}
                         />
-                        <br/>
+                        <br/> */}
                         <Label>Username : </Label>
                         <br/>
                         <Input 
                             type="text" 
                             placeholder="Username"
                             onChange={(e) => {
-                                setUsernameR(e.target.value);
+                                setUsernameL(e.target.value);
                             }}
                         />
                         <br/>
@@ -204,32 +203,29 @@ function SignUpPage() {
                             type="text" 
                             placeholder="Password"
                             onChange={(e) => {
-                                setPasswordR(e.target.value);
+                                setPasswordL(e.target.value);
                             }}
                         />
                         <br/>
-                        <Label>Confirm Password : </Label>
+                        {/* <Label>Confirm Password : </Label>
                         <br/>
                         <Input
                             type="text" 
                             placeholder="Password"
-                            onChange={(e) => {
-                                setConfirmpasswordR(e.target.value);
-                            }}
+                            // onChange={(e) => {
+                            //     setConfirmpasswordR(e.target.value);
+                            // }}
                         />
-                        <br/>
-                        <Button onClick={signup}>SignUp</Button>
+                        <br/> */}
+                        <Button onClick={login}>Sign In</Button>
                         <br/>
                         {}
+                        {loginStatus}
                     </Wrapper>
-                    
                 </Form>
             </Bottom>
-            
         </Container>
     )
 }
 
-export default SignUpPage;
-
-// for commit
+export default SignInPage;
