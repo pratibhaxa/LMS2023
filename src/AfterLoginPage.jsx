@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 // import Navbar from "../components/Navbar";
@@ -85,9 +85,9 @@ const ModifyBook = styled.div`
     }
 `;
 
-const Wishlist = styled.div`
+// const Wishlist = styled.div`
     
-`;
+// `;
 
 const Profile = styled.div`
     margin: 40px;
